@@ -99,6 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Rproj
 .Rproj.user
 
 # History files
@@ -134,3 +136,4 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+README.html
