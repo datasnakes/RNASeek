@@ -1,0 +1,5 @@
+param	value
+cmd_line	cuffdiff -o diff_out_temp -b /ptmp/vallender/ref_genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Bowtie2Index/genome.fa -p 8 -L dlPFC,OFC -u /ptmp/vallender/ref_genomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/genes.gtf /ptmp/vallender/Projects/Impulsivity/A5a-51218213/accepted_hits.bam,/ptmp/vallender/Projects/Impulsivity/A7a-51226176/accepted_hits.bam,/ptmp/vallender/Projects/Impulsivity/A8a-51209304/accepted_hits.bam /ptmp/vallender/Projects/Impulsivity/A5b-51219202/accepted_hits.bam,/ptmp/vallender/Projects/Impulsivity/A7b-51220199/accepted_hits.bam,/ptmp/vallender/Projects/Impulsivity/A8b-51218211/accepted_hits.bam 
+version	2.2.1
+SVN_revision	4237
+boost_version	104700

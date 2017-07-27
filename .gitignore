@@ -137,3 +137,6 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 README.html
+
+# Don't include database file
+*.db

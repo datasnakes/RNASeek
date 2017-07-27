@@ -1,0 +1,7 @@
+file	condition	replicate_num	total_mass	norm_mass	internal_scale	external_scale
+/ptmp/vallender/Projects/Impulsivity/A5a-51218213/accepted_hits.bam	dlPFC	0	4.73583e+07	2.92543e+07	1.69035	1
+/ptmp/vallender/Projects/Impulsivity/A7a-51226176/accepted_hits.bam	dlPFC	1	1.70381e+07	2.92543e+07	0.56621	1
+/ptmp/vallender/Projects/Impulsivity/A8a-51209304/accepted_hits.bam	dlPFC	2	3.40208e+07	2.92543e+07	1.17869	1
+/ptmp/vallender/Projects/Impulsivity/A5b-51219202/accepted_hits.bam	OFC	0	4.3388e+07	2.92543e+07	1.53092	1
+/ptmp/vallender/Projects/Impulsivity/A7b-51220199/accepted_hits.bam	OFC	1	1.60079e+07	2.92543e+07	0.506894	1
+/ptmp/vallender/Projects/Impulsivity/A8b-51218211/accepted_hits.bam	OFC	2	3.42055e+07	2.92543e+07	1.19394	1
