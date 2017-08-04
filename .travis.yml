@@ -1,0 +1,30 @@
+sudo: false
+language: python
+cache: pip
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+notifications:
+  email: false
+before_install:
+# Install tophat
+  - wget http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 -O /tmp/clustalo.tar.gz
+  - tar -xvf /tmp/clustalo.tar.gz
+  - export PATH=$PATH:$PWD/clustalo-1.2.4-Ubuntu-x86_64/bin/
+# Install bowtie2
+  - wget http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 -O /tmp/clustalo.tar.gz
+  - tar -xvf /tmp/clustalo.tar.gz
+  - export PATH=$PATH:$PWD/clustalo-1.2.4-Ubuntu-x86_64/bin/
+# Install cufflinks
+  - wget http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 -O /tmp/clustalo.tar.gz
+  - tar -xvf /tmp/clustalo.tar.gz
+  - export PATH=$PATH:$PWD/clustalo-1.2.4-Ubuntu-x86_64/bin/
+# command to install dependencies
+install:
+  - "pip install --upgrade pip setuptools wheel"
+  - "pip install --only-binary=numpy,scipy numpy scipy"
+  - "pip install matplotlib ipython jupyter sympy nose"
+  - "pip install -r requirements.txt"
+# command to run nosetests
+#script: nosetests Tests/ --verbosity=3

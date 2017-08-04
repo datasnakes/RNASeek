@@ -1,0 +1,3 @@
+pandas>=0.19.2
+mygene>=3.0.0
+psutil>=5.1.3
