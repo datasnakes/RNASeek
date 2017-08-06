@@ -1,12 +1,13 @@
-"""Tophat command line wrapper."""
+"""Cuffdiff command line wrapper."""
 from __future__ import print_function
 from RNAseek.utils import _Option, _Switch, AbstractCommandline, run_doctest
 
-class TophatCommandline(AbstractCommandline):
+
+class CuffdiffCommandline(AbstractCommandline):
     u""""""
 
     def __init__(self, cmd="clustalo", **kwargs):
-        # order parameters in the same order as tophat --help
+        # order parameters in the same order as bowtie2 --help
         self.parameters = \
             [
             # Sequence Input

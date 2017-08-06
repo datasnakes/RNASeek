@@ -1,3 +1,4 @@
+```{r}
 library(shiny)
 library(cummeRbund)
 
@@ -25,3 +26,5 @@ shinyServer(function(input, output) {
   # })
   
 })
+
+```

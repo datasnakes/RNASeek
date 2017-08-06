@@ -1,3 +1,4 @@
+```{r}
 library(shiny)
 library(cummeRbund)
 library(shinythemes)
@@ -15,20 +16,15 @@ shinyUI(
       # Use flow Layout for this tab
       tabPanel("Analysis",
                sidebarLayout(
-                 sidebarPanel('Select a plot to view'),
+                 sidebarPanel(),
                  mainPanel(plotOutput('volcano'),
                            downloadButton("download_volcano", "Download Plot"))
                )),
       
       # Make source code downloadable via a zip file
       # Allow user to view code as well
-      tabPanel("Source Code",
-               tabsetPanel(
-                   tabPanel('ui.R', 
-                            includeMarkdown('www/ui.Rmd')),
-                   tabPanel('server.R', 
-                            includeHTML('www/server.Rmd')),
-                   tabPanel('global.R', 
-                            includeMarkdown('www/global.Rmd'))
-                   ))
+      tabPanel("Source Code")
     ))
+
+
+```

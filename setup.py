@@ -16,7 +16,7 @@ sys.stderr = open('err.txt', 'w')
 
 # Set the home path of the setup script/package
 home = path.abspath(path.dirname(__file__))
-name = 'Datasnakes-RNASeq'
+name = 'datasnakes-rnaseq'
 
 
 def readme():

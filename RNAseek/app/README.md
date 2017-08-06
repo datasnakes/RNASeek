@@ -36,13 +36,6 @@ It may be useful to try the R workflow below which includes edgeR.
 ```r
 source("http://bioconductor.org/workflows.R")
 workflowInstall("RNAseq123")
-
-```
-There's also another workflow worth trying. Check out the [publication](https://f1000research.com/articles/4-1070/v2/pdf) on this workflow.
-
-```r
-source("http://bioconductor.org/workflows.R")
-workflowInstall("rnaseqGene")
 ```
 
 
