@@ -15,9 +15,9 @@ shinyUI(
       # Use flow Layout for this tab
       tabPanel("Analysis",
                sidebarLayout(
-                 sidebarPanel('Select a plot to view'),
-                 mainPanel(plotOutput('volcano'),
-                           downloadButton("download_volcano", "Download Plot"))
+                 sidebarPanel('Select a plot to view',
+                              downloadButton("download_volcano", "Download Plot")),
+                 mainPanel(plotOutput('volcano'))
                )),
       
       # Make source code downloadable via a zip file
