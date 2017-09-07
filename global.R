@@ -1,11 +1,13 @@
 library(cummeRbund)
 
-cuff<-readCufflinks('data/diff_out_temp')
+cuff <- readCufflinks('data/diff_out_temp')
 
 gene.features<-annotation(genes(cuff))
 
 # Add downloading of packages to this file.
 # Note the version of RSQLite - v1.1-2
+# require(devtools)
+# install_version("RSQLite", version = "1.1-2", repos = "http://cran.us.r-project.org")
 
 # required_packages = c(
 #   "shiny",

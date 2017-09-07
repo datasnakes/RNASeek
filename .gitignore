@@ -140,3 +140,7 @@ README.html
 
 # Don't include database file
 *.db
+
+# Don't include genome fasta file or genes gtf file
+genes.gtf
+genome.fa

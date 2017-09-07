@@ -9,16 +9,18 @@ shinyUI(
       theme = shinytheme("flatly"), #inverse = TRUE,
       title = "RNASeek",
       
+      # Home Tab
       tabPanel("Home",
                HTML('<!-- Welcome Banner -->
                              <center><div class="jumbotron"><h1>RNASeek</h1>
                              <br/>
                     <p>A shiny app to perform and visualize RNA-seq analysis. </p></center> ')),
       
-      # Use flow Layout for this tab
+      # Quality Control Analysis Tab
       tabPanel("Quality Control Analysis",
                flowLayout(plotOutput('disp'))),
       
+      # Expression Analysis Tab
       tabPanel("Expression Analysis",
                sidebarLayout(
                  sidebarPanel('Select a plot to view',
@@ -26,7 +28,10 @@ shinyUI(
                               downloadButton("download_volcano", "Download Plot")),
                  mainPanel(plotOutput('volcano'))
                )),
+      # qPCR Analysis Tab
+      tabPanel("qPCR Analysis"),
       
+      # Source code tab
       # Make source code downloadable or link to github
       # Allow user to view code as well
       tabPanel("Source Code",
