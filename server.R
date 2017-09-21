@@ -4,21 +4,9 @@ library(cummeRbund)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  volcanoplotInput <- function(){
+  volcano <- function(){
     csVolcanoMatrix(genes(cuff))
     }
-  
-  output$volcano <- renderPlot(
-    print(volcanoplotInput())
-  )
-
-  output$download_volcano <- downloadHandler(
-    filename = "volcanoplot.png",
-    content = function(file) {
-      png(file)
-      print(volcanoplotInput())
-      dev.off()
-    })
   
   dispersionplotInput <- function(){
     csDendro(genes(cuff), replicates=T)
@@ -37,9 +25,29 @@ shinyServer(function(input, output) {
     })
   
   
-
-   # output$heatmap <- renderPlot({
-   #   csHeatmap(myGenes, cluster='both')
-   # })
-
+   
+   heatmap <- function(){
+     csHeatmap(myGenes, cluster='both')
+   }
+   
+   datasetInput <- reactive({
+     switch(input$dataset,
+            "heatmap" = heatmap(),
+            "volcano" = volcano())
+   })
+   
+   output$plot <- renderPlot(
+     print(datasetInput())
+   )
+   
+   output$downloadData <- downloadHandler(
+     filename = function() {
+       paste(input$dataset, ".png", sep = "")
+     },
+     content = function(file) {
+       png(file)
+       print(datasetInput())
+       dev.off()
+     }
+   )
 })

@@ -27,9 +27,7 @@ in the pipeline.
 4. Explore any sex differences.
 
 ### ToDo
-1. Integrate pipeline automation (shell and/or python - blacktie?).
-2. Test cuffdiff.
-2. Test CummeRbund and other visualization tools (edgeR) with test data.
+1. Test CummeRbund and other visualization tools (edgeR) with test data.
 
 It may be useful to try the R workflow below which includes edgeR.
 

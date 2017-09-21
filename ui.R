@@ -6,7 +6,8 @@ library(shinythemes)
 # Define UI for application that draws a histogram
 shinyUI(
   navbarPage(
-      theme = shinytheme("flatly"), #inverse = TRUE,
+      theme = shinytheme("yeti"), 
+      inverse = FALSE,
       title = "RNASeek",
       
       # Home Tab
@@ -23,10 +24,12 @@ shinyUI(
       # Expression Analysis Tab
       tabPanel("Expression Analysis",
                sidebarLayout(
-                 sidebarPanel('Select a plot to view',
+                 sidebarPanel(width = 2,
+                              selectInput("dataset", "Select a plot to view:",
+                                          choices = c("heatmap", "volcano")),
                               br(),
-                              downloadButton("download_volcano", "Download Plot")),
-                 mainPanel(plotOutput('volcano'))
+                              downloadButton("downloadData", "Download")),
+                 mainPanel(plotOutput("plot", height = "800px"))
                )),
       # qPCR Analysis Tab
       tabPanel("qPCR Analysis"),
