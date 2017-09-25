@@ -1,9 +1,15 @@
 library(shiny)
 library(cummeRbund)
+library(RSQLite)
 
-# Define server logic required to draw a histogram
+# Allow large databases to be uploaded
+options(shiny.maxRequestSize=5000*1024^2)
+
+
+# Define server logic 
 shinyServer(function(input, output) {
    
+  # Set up plots
   volcano <- function(){
     csVolcanoMatrix(genes(cuff))
     }
@@ -50,4 +56,5 @@ shinyServer(function(input, output) {
        dev.off()
      }
    )
+
 })

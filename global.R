@@ -1,12 +1,14 @@
 library(cummeRbund)
 
+# Upload/read in the database file
 cuff <- readCufflinks('data/diff_out_temp')
 
 gene.features <- annotation(genes(cuff))
 
 geneids <- getSig(cuff, level="genes", alpha=0.05)
 
-myGenes <-getGenes(cuff, geneids)
+myGenes <- getGenes(cuff, geneids)
+
 
 # Add downloading of packages to this file.
 # Note the version of RSQLite - v1.1-2

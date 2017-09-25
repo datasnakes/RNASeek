@@ -7,24 +7,56 @@ library(shinythemes)
 # Define UI for application that draws a histogram
 shinyUI(
   navbarPage(
-      theme = shinytheme("sandstone"), #inverse = TRUE,
-      title = "RNA-Seq Analysis",
+      theme = shinytheme("yeti"), 
+      inverse = FALSE,
+      title = "RNASeek",
       
+      # Home Tab
       tabPanel("Home",
-               includeMarkdown('README.md')),
+               HTML('<!-- Welcome Banner -->
+                             <center><div class="jumbotron"><h1>RNASeek</h1>
+                             <br/>
+                    <p>A shiny app to perform and visualize RNA-seq analysis. </p></center> '),
+               br()),
+               # # Copy the line below to make a file upload manager
+               # fluidRow(column(12, align = "center",
+               #                 fileInput("db", label = h4("Select your cufflinks database"))))),
       
-      # Use flow Layout for this tab
-      tabPanel("Analysis",
+      # Quality Control Analysis Tab
+      tabPanel("Quality Control Analysis",
+               flowLayout(plotOutput('disp'))),
+      
+      # Expression Analysis Tab
+      tabPanel("Expression Analysis",
                sidebarLayout(
-                 sidebarPanel(),
-                 mainPanel(plotOutput('volcano'),
-                           downloadButton("download_volcano", "Download Plot"))
+                 sidebarPanel(width = 2,
+                              selectInput("dataset", "Select a plot to view:",
+                                          choices = c("heatmap", "volcano")),
+                              br(),
+                              downloadButton("downloadData", "Download")),
+                 mainPanel(plotOutput("plot", height = "800px"))
                )),
+      # qPCR Analysis Tab
+      tabPanel("qPCR Analysis"),
       
-      # Make source code downloadable via a zip file
+      # Source code tab
+      # Make source code downloadable or link to github
       # Allow user to view code as well
-      tabPanel("Source Code")
+      tabPanel("Source Code",
+               "The following source code is also present on our github repository.",
+               br(),
+               br(),
+               tabsetPanel(
+                   tabPanel('ui.R', 
+                            includeMarkdown('www/ui.Rmd')),
+                   tabPanel('server.R', 
+                            includeMarkdown('www/server.Rmd')),
+                   tabPanel('global.R', 
+                            includeMarkdown('www/global.Rmd'))
+                   )),
+      # qPCR Analysis Tab
+      tabPanel("About",
+               "ljalkdfjalk")
     ))
-
 
 ```

@@ -11,11 +11,18 @@ shinyUI(
       title = "RNASeek",
       
       # Home Tab
-      tabPanel("Home",
+      tabPanel("Data Input",
                HTML('<!-- Welcome Banner -->
                              <center><div class="jumbotron"><h1>RNASeek</h1>
                              <br/>
-                    <p>A shiny app to perform and visualize RNA-seq analysis. </p></center> ')),
+                    <p>A shiny app to perform and visualize RNA-seq analysis.<p>
+                    <p>Checkout the <a href="">tutorial</a> to learn more!</p></center>'),
+               br(),
+               # Copy the line below to make a file upload manager
+               fluidRow(column(12, align = "center",
+                               fileInput("db",
+                                         accept = c(".db"),
+                                         label = h4("Select your cufflinks database"))))),
       
       # Quality Control Analysis Tab
       tabPanel("Quality Control Analysis",
@@ -48,5 +55,8 @@ shinyUI(
                             includeMarkdown('www/server.Rmd')),
                    tabPanel('global.R', 
                             includeMarkdown('www/global.Rmd'))
-                   ))
+                   )),
+      # qPCR Analysis Tab
+      tabPanel("About",
+               includeHTML("www/about.html"))
     ))
