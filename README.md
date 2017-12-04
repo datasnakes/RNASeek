@@ -1,5 +1,5 @@
 # RNASeek
-A shiny app to perform simple and multivariate differential analysis using deseq2 and create interactive visuzalizations using a [`htseq-count-cluster`]() merged counts table or merge counts table from [htseq]()'s `htseq-count` script and a matching annotation table.
+A shiny app to perform simple and multivariate differential analysis using deseq2 and create interactive visuzalizations using a [`htseq-count-cluster`](https://github.com/datasnakes/htseq-count-cluster) merged counts table or merge counts table from [htseq](https://github.com/simon-anders/htseq)'s `htseq-count` script and a matching annotation table.
 
 
 ## Running the RNASeek app locally
