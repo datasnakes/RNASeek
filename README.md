@@ -34,8 +34,8 @@ biocLite("DESeq2")
 ```
 
 ## Maintainers
-Shaurita Hutchins | [@sdhutchins](https://github.com/sdhutchins) | [???](mailto:sdhutchins@outlook.com)
+Shaurita Hutchins | [@sdhutchins](https://github.com/sdhutchins) | [✉](mailto:sdhutchins@outlook.com)
 
-Rob Gilmore | [@grabear](https://github.com/grabear) | [???](mailto:robgilmore127@gmail.com)
+Rob Gilmore | [@grabear](https://github.com/grabear) | [✉](mailto:robgilmore127@gmail.com)
 
 Please feel free to [open an issue](https://github.com/datasnakes/RNASeek/issues/new) if you have a question, feedback, or problem using this app.
