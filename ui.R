@@ -20,9 +20,25 @@ shinyUI(
                br(),
                # Copy the line below to make a file upload manager
                fluidRow(column(12, align = "center",
-                               fileInput("db",
-                                         accept = c(".csv", ".txt"),
-                                         label = h4("Select your merged counts file/table"))))),
+                               fileInput("counts_file",
+                                         accept = c("text/csv", ".csv"),
+                                         label = h4("Select your merged counts file")))),
+               # Copy the line below to make a file upload manager
+               fluidRow(column(12, align = "center",
+                               fileInput("anno_file",
+                                         accept = c("text/csv", ".csv"),
+                                         label = h4("Select your annotation file"))))),
+      # Table Viewer
+      tabPanel("Table View",
+               sidebarPanel("Select a table to view",
+                            width = 2),
+               mainPanel(
+                 
+                 # Output: Data file
+                 tableOutput("anno")
+                 
+               )),
+      
       
       # Quality Control Analysis Tab
 
