@@ -6,9 +6,8 @@ A shiny app to perform simple and multivariate differential analysis using deseq
 
 ### Via the runGitHub command
 ```r
-install.packages('devtools')
-library(devtools)
-shiny::runGitHub('shiny_example', 'rstudio')
+library(shiny)
+shiny::runGitHub('RNASeek', 'datasnakes')
 ```
 
 ### Via cloning the repository
@@ -17,8 +16,11 @@ shiny::runGitHub('shiny_example', 'rstudio')
 git clone https://github.com/datasnakes/RNASeek.git
 ```
 
-2. Open RStudio or Rconsole and type `runApp('path/to/RNASeek')` to run this app.
-
+2. Open RStudio or Rconsole and type:
+```r
+library(shiny)
+runApp('path/to/RNASeek')
+```
 ## Dependencies
 The dependencies are `shiny`, `shinythemes`, and  `DESeq2`. Ensure you have the latest versions installed and the latest version of R.
 
