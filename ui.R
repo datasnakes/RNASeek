@@ -1,5 +1,5 @@
 library(shiny)
-library(cummeRbund)
+library(DESeq2)
 library(shinythemes)
 
 
@@ -15,31 +15,19 @@ shinyUI(
                HTML('<!-- Welcome Banner -->
                              <center><div class="jumbotron"><h1>RNASeek</h1>
                              <br/>
-                    <p>A shiny app to perform and visualize RNA-seq analysis.<p>
+                    <p>A shiny app to perform rnaseq differential analysis using deseq2.<p>
                     <p>Checkout the <a href="">tutorial</a> to learn more!</p></center>'),
                br(),
                # Copy the line below to make a file upload manager
                fluidRow(column(12, align = "center",
                                fileInput("db",
-                                         accept = c(".db"),
-                                         label = h4("Select your cufflinks database"))))),
+                                         accept = c(".csv", ".txt"),
+                                         label = h4("Select your merged counts file/table"))))),
       
       # Quality Control Analysis Tab
-      tabPanel("Quality Control Analysis",
-               flowLayout(plotOutput('disp'))),
-      
+
       # Expression Analysis Tab
-      tabPanel("Expression Analysis",
-               sidebarLayout(
-                 sidebarPanel(width = 2,
-                              selectInput("dataset", "Select a plot to view:",
-                                          choices = c("heatmap", "volcano")),
-                              br(),
-                              downloadButton("downloadData", "Download")),
-                 mainPanel(plotOutput("plot", height = "800px"))
-               )),
-      # qPCR Analysis Tab
-      tabPanel("qPCR Analysis"),
+
       
       # Source code tab
       # Make source code downloadable or link to github

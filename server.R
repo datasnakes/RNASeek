@@ -1,60 +1,11 @@
 library(shiny)
-library(cummeRbund)
-library(RSQLite)
+library(DESeq2)
 
-# Allow large databases to be uploaded
+# Allow large files to be uploaded
 options(shiny.maxRequestSize=5000*1024^2)
 
 
 # Define server logic 
 shinyServer(function(input, output) {
    
-  # Set up plots
-  volcano <- function(){
-    csVolcanoMatrix(genes(cuff))
-    }
-  
-  dispersionplotInput <- function(){
-    csDendro(genes(cuff), replicates=T)
-  }
-  
-  output$disp <- renderPlot(
-    print(dispersionplotInput())
-  )
-  
-  output$download_dispersion <- downloadHandler(
-    filename = "dispersionplot.png",
-    content = function(file) {
-      png(file)
-      print(dispersionplotInput())
-      dev.off()
-    })
-  
-  
-   
-   heatmap <- function(){
-     csHeatmap(myGenes, cluster='both')
-   }
-   
-   datasetInput <- reactive({
-     switch(input$dataset,
-            "heatmap" = heatmap(),
-            "volcano" = volcano())
-   })
-   
-   output$plot <- renderPlot(
-     print(datasetInput())
-   )
-   
-   output$downloadData <- downloadHandler(
-     filename = function() {
-       paste(input$dataset, ".png", sep = "")
-     },
-     content = function(file) {
-       png(file)
-       print(datasetInput())
-       dev.off()
-     }
-   )
-
 })
