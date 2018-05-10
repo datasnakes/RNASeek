@@ -1,16 +1,19 @@
 # RNASeek
-A shiny app to perform simple and multivariate differential analysis using deseq2 and create interactive visuzalizations using a [`htseq-count-cluster`](https://github.com/datasnakes/htseq-count-cluster) merged counts table or merge counts table from [htseq](https://github.com/simon-anders/htseq)'s `htseq-count` script and a matching annotation table.
+
+A shiny app to perform single and multifactor differential analyses using `edgeR`, `DESeq2`, or `limma` and create interactive visuzalizations. This app uses the output of a [`htseq-count-cluster`](https://github.com/datasnakes/htseq-count-cluster) merged counts table or merge counts table from [htseq](https://github.com/simon-anders/htseq)'s `htseq-count` script and a matching annotation table or csv file.
 
 
 ## Running the RNASeek app locally
 
 ### Via the runGitHub command
+
 ```r
 library(shiny)
 shiny::runGitHub('RNASeek', 'datasnakes')
 ```
 
 ### Via cloning the repository
+
 1. Clone or download the git repository.
 ```bash
 git clone https://github.com/datasnakes/RNASeek.git
@@ -22,6 +25,7 @@ library(shiny)
 runApp('path/to/RNASeek')
 ```
 ## Dependencies
+
 The dependencies are `shiny`, `shinythemes`, and  `DESeq2`. Ensure you have the latest versions installed and the latest version of R.
 
 
@@ -34,6 +38,7 @@ biocLite("DESeq2")
 ```
 
 ## Maintainers
+
 Shaurita Hutchins | [@sdhutchins](https://github.com/sdhutchins) | [✉](mailto:sdhutchins@outlook.com)
 
 Rob Gilmore | [@grabear](https://github.com/grabear) | [✉](mailto:robgilmore127@gmail.com)
