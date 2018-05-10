@@ -6,10 +6,10 @@ library(shinythemes)
 # Define UI for application that draws a histogram
 shinyUI(
   navbarPage(
-      theme = shinytheme("yeti"), 
+      theme = shinytheme("yeti"),
       inverse = FALSE,
       title = "RNASeek",
-      
+
       # Home Tab
       tabPanel("Data Input",
                HTML('<!-- Welcome Banner -->
@@ -33,18 +33,18 @@ shinyUI(
                sidebarPanel("Select a table to view",
                             width = 2),
                mainPanel(
-                 
+
                  # Output: Data file
                  tableOutput("anno")
-                 
+
                )),
-      
-      
+
+
       # Quality Control Analysis Tab
 
       # Expression Analysis Tab
 
-      
+
       # Source code tab
       # Make source code downloadable or link to github
       # Allow user to view code as well
@@ -53,12 +53,13 @@ shinyUI(
                br(),
                br(),
                tabsetPanel(
-                   tabPanel('ui.R', 
+                   tabPanel('ui.R',
                             includeMarkdown('www/ui.Rmd')),
-                   tabPanel('server.R', 
+                   tabPanel('server.R',
                             includeMarkdown('www/server.Rmd')),
-                   tabPanel('global.R', 
+                   tabPanel('global.R',
                             includeMarkdown('www/global.Rmd'))
+
                    )),
       # qPCR Analysis Tab
       tabPanel("About",
